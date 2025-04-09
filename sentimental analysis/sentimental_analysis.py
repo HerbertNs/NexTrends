@@ -1,4 +1,4 @@
-#26TH MARCH 2025 9:37PM
+#9TH APRIL 4:51 PM
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import re
@@ -23,6 +23,11 @@ contextual_patterns = {
         r"(?:i|me).*(?:tired of|sick of|hate) (?:life|living|myself|everything)",
         r"(?:nothing|no one).*(?:matters|cares|loves)",
         r"(?:i'll|i will) be (?:happy|better|fine) when (?:i|me|we) (?:don't|do not|no longer) exist"
+        r"(?:i|me|my).*(?:heartbroken|broken heart|devastated|grieving|mourning)",
+        r"(?:i|me).*(?:can't stop|crying all|tears streaming)",
+        r"(?:i|me).*(?:feel|am) (?:empty|numb|hopeless|worthless)",
+        r"(?:i|me).*(?:regret|wish i hadn't|shouldn't have)",
+        r"(?:i|me).*(?:lost my|death of|passed away|no longer with us)"
     ],
     "happy": [
         r"(?:i|me|my|we).*(?:happy|joy|excite|love|great|awesome|amazing)",
@@ -34,18 +39,24 @@ contextual_patterns = {
     "angry": [
         r"(?:i|me|my|we).*(?:angry|mad|furious|hate|pissed|annoyed)",
         r"(?:i|me).*(?:can't stand|sick of|tired of|fed up)",
-        r"(?:this|that|you|they).*(?:stupid|idiot|dumb|moron|ridiculous)",
+        r"(?:this|that|you|they).*(?:stupid|idiot|dumb|moron|ridiculous|destroyed)",
         r"(?:fuck|shit|damn|screw|hell)",
         r"(?:i|me).*(?:kill|punch|slap|hit)"
     ],
     "fear": [
-        r"(?:i|me|my|we).*(?:scared|afraid|terrified|worried|anxious|nervous)",
-        r"(?:i|me).*(?:don't know what|uncertain|unsure)",
+        r"(?:i|me|my|we).*(?:scared|afraid|terrified|worried|anxious|nervous|anxiety|scared)",
+        r"(?:i|me).*(?:don't know what|uncertain|unsure|weird)",
         r"(?:what if|oh no|oh god|oh)",
         r"(?:i|me).*(?:panic|stress|worry)",
         r"(?:help|please help|save me)"
     ],
-    "neutral": []
+        "neutral": [
+        r"(?:i|me).*(?:don't care|not bothered|whatever|meh)",
+        r"(?:just saying|for your information|fyi|as a matter of fact)",
+        r"(?:this is|that is) (?:okay|fine|acceptable|reasonable)",
+        r"(?:i|me).*(?:neither happy nor sad|not emotional|indifferent)",
+        r"(?:i|me).*(?:just wondering|curious about|asking about)"
+    ]
 }
 
 def detect_emotion(text):
@@ -117,7 +128,7 @@ def analyze_emotion(text_input):
 
 if __name__ == "__main__":
     #TRY IT OUT HERE.
-    input_text = ""
+    input_text = "i hate everyone"
     emotion, intensity = analyze_emotion(input_text)
     print(f"Detected Emotion: {emotion}")
     print(f"Emotional Intensity: {intensity:.2f}")

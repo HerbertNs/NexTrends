@@ -71,7 +71,7 @@ def score_image(image_path, standard_values, weights=None):
             return total_deviation
 
     except Exception as e:
-        print(f"⚠ Error processing image: {str(e)}")
+        print(f"Error processing image: {str(e)}")
         return None
 
 # Example Usage

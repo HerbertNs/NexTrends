@@ -2,3 +2,9 @@ nltk
 re
 PIL
 numpy
+pandas
+googleapiclient
+csv
+dotenv
+pytube
+requests

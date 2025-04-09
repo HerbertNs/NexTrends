@@ -1,2 +1,6 @@
 .qodo
-test_images//
+.idea
+NexTrends//data_scraping//compiled_links//
+NexTrends//data_scraping//compiled_thumbnails//
+tst.png
+NexTrends//.gitignore
