@@ -85,6 +85,7 @@ if __name__ == "__main__":
           f"Contrast={standard['avg_contrast']:.2f}, "
           f"Saturation={standard['avg_saturation']:.2f}")
 
+    """the images are graded purely out of comparison to a group of anothers. Not strictly quality."""
     # Step 2: Score a test image against the standard
     TEST_IMAGE = ""
     score = score_image(TEST_IMAGE, standard)
