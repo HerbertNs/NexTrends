@@ -4,9 +4,6 @@ import pandas as pd
 import re
 import os
 
-"""these only work for csv and xslx files. If you want to change the regex pattern,make sure
-its done well else there would be compiling errors"""
-
 #ou may need to adjust the file paths here.
 datasheets_folder = "NexTrends\\data_scraping\\datasheets"
 output_folder = "NexTrends\\data_scraping\\compiled_links"
